@@ -1,0 +1,224 @@
+@import url("/assets/fonts/Roboto-Bold.ttf");
+@import url("/assets/fonts/Roboto-Regular.ttf");
+
+:root {
+  --pr-bg-color: hsl(4, 100%, 67%);
+
+  --neutral-DarkSlateGrey: hsl(234, 29%, 20%);
+  --neutralCharcoalGrey: hsl(235, 18%, 26%);
+  --neutralGrey: hsl(231, 7%, 60%);
+  --neutralWhite: hsl(0, 0%, 100%);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fs-paragraph: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+  background: var(--neutralCharcoalGrey);
+  color: var(--neutralCharcoalGrey);
+}
+P {
+  font-size: var(--fs-paragraph);
+  color: var(--neutral-DarkSlateGrey);
+}
+.container {
+  display: grid;
+  justify-content: center;
+
+  border-radius: 5%;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  background-color: var(--neutralWhite);
+}
+.container h1 {
+  font-size: 40px;
+  color: var(--neutral-DarkSlateGrey);
+  font-weight: var(--fw-bold);
+}
+.container p {
+  color: var(--neutralCharcoalGrey);
+  font-weight: var(--fw-regular);
+}
+.container .success {
+  display: initial;
+  padding: 3.5rem;
+}
+
+.left-side {
+  display: grid;
+  align-content: center;
+  margin: 30px;
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.form-sign .invalid-email.active {
+  display: block;
+}
+
+.right-side {
+  margin: 40px;
+}
+.right-side img {
+  width: 300px;
+}
+.email-field {
+  padding: 10px 20px;
+}
+.email-lable {
+  font-weight: var(--fw-bold);
+  font-size: 11px;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 5%;
+  background-color: var(--pr-bg-color);
+  color: var(--neutralWhite);
+  font-weight: var(--fw-regular);
+}
+
+.button::before {
+  content: "";
+  background-color: var(--neutral-DarkSlateGrey);
+}
+.left-side ul {
+  padding-left: 0px;
+}
+.left-side ul,
+.left-side p {
+  margin-bottom: 1.5rem;
+}
+
+.left-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style-image: url(/assets/images/icon-list.svg);
+  list-style-position: inside;
+}
+
+.form-sign .invalid-email {
+  display: none;
+  color: var(--pr-bg-color);
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.confirmed-message {
+  display: none;
+  line-height: 1.2;
+}
+
+.confirmed-message.active {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background-color: var(--neutralWhite);
+}
+
+.confirmed-message img {
+  width: 80px;
+}
+
+.confirmed-message h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+.confirmed-message p {
+  margin: 2rem 0;
+}
+.confirmed-message button {
+  cursor: pointer;
+  background-color: var(--neutral-DarkSlateGrey);
+  color: var(--neutralWhite);
+  font-weight: 700;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.confirmed-message button:hover {
+  background: linear-gradient(
+    137deg,
+    rgba(255, 63, 124, 1),
+    rgba(255, 154, 34, 1),
+    70%
+  );
+}
+
+.confirmed-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  margin: 1.5rem;
+  padding: 2rem 1rem;
+}
+.user-email {
+  font-weight: var(--fw-bold);
+}
+
+@media (max-width: 375px) {
+  body {
+    background-color: var(--neutralWhite);
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .left-side {
+    display: grid;
+    align-content: center;
+    margin: 26px 5px;
+  }
+
+  .left-side .button {
+    background-color: var(--neutralCharcoalGrey);
+    padding: 15px;
+  }
+
+ 
+  .confirmed-message.active {
+    display: flex;
+    flex-direction: column;
+    margin: 7rem 1rem;
+  }
+  .confirmed-message.active .confirmed-wrapper {
+    width: 300px;
+  }
+  .confirmed-message.active .dissmis-message {
+    margin-top: 13rem;
+  }
+  .user-email {
+    font-weight: var(--fw-bold);
+  }
+  .confirmed-message.active p {
+    margin-top: 0;
+  }
+}
